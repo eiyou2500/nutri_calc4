@@ -1,0 +1,11 @@
+{
+  "name": "nutri-calc4",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "format": "node scripts/check-format.js",
+    "lint": "node scripts/check-static.js",
+    "typecheck": "node scripts/check-static.js --typecheck",
+    "build": "node scripts/check-static.js --build"
+  }
+}
