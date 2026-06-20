@@ -1893,6 +1893,8 @@ function refreshAll() {
   $('#s-k').textContent = formatDec1(grand.nutrients.potassiumMEq);
   $('#s-water').textContent = formatDec1(grand.nutrients.waterMl);
   $('#s-ratio').textContent = grand.ivCarbInsulinRatio === null ? '—' : formatDec1(grand.ivCarbInsulinRatio);
+  const heroKcal = $('#hero-kcal');
+  if (heroKcal) heroKcal.textContent = formatInt(grand.nutrients.energyKcal);
   // warn colors
   $('#s-kcal-wrap').classList.toggle('warn', grand.hasNull);
   $('#s-prot-wrap').classList.toggle('warn', grand.hasNull);
