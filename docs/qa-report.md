@@ -4,16 +4,15 @@
 
 - Date: 2026-06-18
 - App type: static PWA (`index.html` + JSON data files)
-- Local server: `python3 -m http.server 4173 --bind 127.0.0.1`
 
 ## Checks
 
 - `npm install --package-lock-only --ignore-scripts`: passed; no runtime dependencies were required.
-- `npm run format`: initially found a missing trailing newline in `README.md`; after fixing it, the command passed.
+- `npm run format`: passed.
 - `npm run lint`: passed; JSON data parses and inline JavaScript compiles.
 - `npm run typecheck`: passed via static validation fallback because this is not a TypeScript project.
 - `npm run build`: passed via static validation fallback because this app has no bundler.
-- `curl -I http://127.0.0.1:4173/index.html`: passed; local server returned `HTTP/1.0 200 OK`.
+- `python3 -m http.server 4173 --bind 127.0.0.1` + `curl -I http://127.0.0.1:4173/index.html`: passed; local server returned `HTTP/1.0 200 OK`.
 
 ## Browser / visual checks
 
@@ -23,6 +22,11 @@
 ## Reduced motion
 
 - CSS includes a `prefers-reduced-motion: reduce` block that effectively disables animations and transitions.
+
+## Current UX correction
+
+- The previous explanatory hero was removed because it forced users to scroll before calculating.
+- The app now starts directly at the calculation form, with a softer color system targeted at women in their 20s while preserving contrast and practical density.
 
 ## Remaining risks
 
